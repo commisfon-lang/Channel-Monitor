@@ -10,11 +10,4 @@ psycopg2-binary==2.9.9  # для PostgreSQL
 
 # Дополнительные
 aiofiles==23.2.1
-pydantic==2.5.0
-python-multipart==0.0.6
-
-# Для планировщика (опционально)
-apscheduler==3.10.4
-
-# Логирование
 colorlog==6.7.0

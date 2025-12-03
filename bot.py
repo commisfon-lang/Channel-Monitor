@@ -333,9 +333,22 @@ class ManagementBot:
                 if channel['username']:
                     text += f"   @{channel['username']}\n"
             await query.edit_message_text(text, parse_mode=ParseMode.HTML)
+        elif data == 'settings':
+            await query.edit_message_text(
+                "⚙️ <b>Настройки:</b>\n\n"
+                "Измените настройки в файле .env",
+                parse_mode=ParseMode.HTML
+            )
     
     async def handle_message(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
         """Обработчик текстовых сообщений"""
-        # Здесь можно добавить логику обработки пересланных сообщений
-        # для добавления каналов и т.д.
-        pass
+        # Обработка пересланных сообщений для добавления каналов
+        if update.message.forward_from_chat:
+            chat = update.message.forward_from_chat
+            if chat.type == 'channel':
+                await update.message.reply_text(
+                    f"Канал: {chat.title}\n"
+                    f"Username: @{chat.username}\n"
+                    f"ID: {chat.id}\n\n"
+                    f"Добавить для отслеживания? Используйте /add_channel @{chat.username}"
+                )

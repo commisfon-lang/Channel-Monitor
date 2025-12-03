@@ -1,6 +1,6 @@
 import asyncio
 import logging
-from datetime import datetime, timedelta
+from datetime import datetime
 from typing import List, Dict, Optional
 from telethon import TelegramClient, events
 from telethon.tl.types import Channel, Message

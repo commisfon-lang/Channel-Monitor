@@ -9,12 +9,16 @@
 - 📤 Автоматическая публикация в ваши каналы
 - 📊 Детальная статистика
 - 🤖 Управление через Telegram-бота
-- 💾 SQLite/PostgreSQL база данных
-- 🐳 Поддержка Docker
+- 💾 SQLite база данных
+- 🚀 Готов к работе на сервере
 
 ## Установка
 
-### 1. Клонирование репозитория
+### 1. Подготовка сервера
 ```bash
-git clone <repository-url>
-cd telegram-channel-monitor
+# Ubuntu/Debian
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y python3 python3-pip python3-venv git
+
+# CentOS/RHEL
+sudo yum install -y python3 python3-pip git

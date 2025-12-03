@@ -1,7 +1,8 @@
 import asyncio
 import logging
+import re
 from datetime import datetime
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from telegram import Bot, InputMediaPhoto, InputMediaVideo, InputMediaDocument
 from telegram.error import TelegramError, RetryAfter
 from telegram.constants import ParseMode
